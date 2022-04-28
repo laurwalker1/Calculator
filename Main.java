@@ -8,36 +8,35 @@ public class Main {
         System.out.println("2. Multiplication (*) ");
         System.out.println("3. Subtraction (-) ");
         System.out.println("4. Division (/) ");
-        System.out.println("Choose an operator: ");
-        char operation = input.next().charAt(0);
 
-        if (operation == '+' || operation == '-' || operation == '*' || operation == '/') {
-            System.out.println("Valid");
+        //noinspection InfiniteLoopStatement
+        while (true) {
+            System.out.println("Choose an operator: ");
+            char operation = input.next().charAt(0);
 
-        } else {
-                System.out.println("Invalid");
-                System.exit(operation);
+            if (!(operation == '+' || operation == '-' || operation == '*' || operation == '/')) {
+                continue;
             }
 
 
-        System.out.println("Enter the first number: ");
-        int num1 = input.nextInt();
+            System.out.println("Enter the first number: ");
+            int num1 = input.nextInt();
 
-        System.out.println("Enter the second number: ");
-        int num2 = input.nextInt();
+            System.out.println("Enter the second number: ");
+            int num2 = input.nextInt();
 
-        if (operation == '+') {
-            System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
-        } else if (operation == '-') {
-            System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
-        } else if (operation == '*') {
-            System.out.println(num1 + " * " + num2 + " = " + (num1 * num2));
-        } else if (operation == '/') {
-            System.out.println(num1 + " / " + num2 + " = " + (num1 / num2));
-        } else {
-            System.out.println("Invalid, try again!");
+            if (operation == '+') {
+                System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
+            } else if (operation == '-') {
+                System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
+            } else if (operation == '*') {
+                System.out.println(num1 + " * " + num2 + " = " + (num1 * num2));
+            } else if (operation == '/') {
+                System.out.println(num1 + " / " + num2 + " = " + (num1 / num2));
+            } else {
+                System.out.println("Invalid, try again!");
+            }
+
         }
-
     }
-
 }
