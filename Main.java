@@ -8,9 +8,17 @@ public class Main {
         System.out.println("2. Multiplication (*) ");
         System.out.println("3. Subtraction (-) ");
         System.out.println("4. Division (/) ");
-
         System.out.println("Choose an operator: ");
         char operation = input.next().charAt(0);
+
+        if (operation == '+' || operation == '-' || operation == '*' || operation == '/') {
+            System.out.println("Valid");
+
+        } else {
+                System.out.println("Invalid");
+                System.exit(operation);
+            }
+
 
         System.out.println("Enter the first number: ");
         int num1 = input.nextInt();
