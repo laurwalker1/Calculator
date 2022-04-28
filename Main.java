@@ -6,7 +6,7 @@ public class Main {
         System.out.println("Calculator");
         System.out.println("1. Addition (+)");
         System.out.println("2. Multiplication (*) ");
-        System.out.println("3. Substraction (-) ");
+        System.out.println("3. Subtraction (-) ");
         System.out.println("4. Division (/) ");
 
         System.out.println("Choose an operator: ");
