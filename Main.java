@@ -21,7 +21,6 @@ public class Main {
 
            if (operation == '+' || operation == '-' || operation == '*' || operation == '/') {
                 isOperatorValid =true;
-
            }
        }
 //            if (operation != '+' && operation != '-' && operation != '*' && operation != '/') {
