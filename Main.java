@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        Calculator calculatorObject = new Calculator();
         boolean isOperatorValid = false;
         char operation = 0;
         Scanner scanObj = new Scanner(System.in);
@@ -23,24 +24,24 @@ public class Main {
             }
         }
 
-        double num1 = chooseFirstNumber();
-        double num2 = chooseSecondNumber();
+        double number1 = chooseFirstNumber();
+        double number2 = chooseSecondNumber();
 
         switch (operation) {
             case '+':
-                System.out.println("The answer is: " + add(num1, num2));
+                calculatorObject.add(number1, number2);
                 break;
 
             case '-':
-                System.out.println("The answer is: " + sub(num1, num2));
+                calculatorObject.sub(number1, number2);
                 break;
 
             case '*':
-                System.out.println("The answer is: " + mul(num1, num2));
+                calculatorObject.mul(number1, number2);
                 break;
 
             case '/':
-                System.out.println("The answer is: " + div(num1, num2));
+                calculatorObject.div(number1, number2);
                 break;
 
         }
@@ -61,28 +62,6 @@ public class Main {
         return scanObj.nextDouble();
 
     }
-
-    public static double add(double num1, double num2) {
-        double n;
-        n = num1 + num2;
-        return n;
-    }
-    public static double sub(double num1, double num2) {
-        double n;
-        n = num1 - num2;
-        return n;
-    }
-    public static double mul(double num1, double num2) {
-        double n;
-        n = num1 * num2;
-        return n;
-    }
-    public static double div(double num1, double num2) {
-        double n;
-        n = num1 / num2;
-        return n;
-    }
-
 
 }
 
