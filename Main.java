@@ -3,10 +3,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         boolean isOperatorValid = false;
-        char operation =0;
-        double num1, num2;
+        char operation = 0;
+        double num1 = chooseFirstNumber();
+        double num2 = chooseSecondNumber();
+        Scanner scanObj = new Scanner(System.in);
 
-        Scanner input = new Scanner(System.in);
         System.out.println("Calculator");
         System.out.println("1. Addition (+)");
         System.out.println("2. Multiplication (*) ");
@@ -16,57 +17,72 @@ public class Main {
 
         while (!isOperatorValid) {
             System.out.println("Choose an operator: ");
-            operation = input.next().charAt(0);
+            operation = scanObj.next().charAt(0);
 
+            if (operation == '+' || operation == '-' || operation == '*' || operation == '/') {
+                isOperatorValid = true;
+            }
+        }
 
-           if (operation == '+' || operation == '-' || operation == '*' || operation == '/') {
-                isOperatorValid =true;
-           }
-       }
-//            if (operation != '+' && operation != '-' && operation != '*' && operation != '/') {
-//                isOperatorValid = true;
-//            }
-//        }
-
-        System.out.println("Enter the first number: ");
-        num1 = input.nextDouble();
-
-        System.out.println("Enter the second number: ");
-        num2 = input.nextDouble();
-
-//            if (operation == '+') {
-//                System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
-//            } else if (operation == '-') {
-//                System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
-//            } else if (operation == '*') {
-//                System.out.println(num1 + " * " + num2 + " = " + (num1 * num2));
-//            } else if (operation == '/') {
-//                System.out.println(num1 + " / " + num2 + " = " + (num1 / num2));
-//            } else {
-//                System.out.println("Invalid, try again!");
-//            }
-//
-//        }
         switch (operation) {
             case '+':
-                System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
+                System.out.println("The answer is: " + add(num1, num2));
                 break;
 
             case '-':
-                System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
+                System.out.println("The answer is: " + sub(num1, num2));
                 break;
 
             case '*':
-                System.out.println(num1 + " * " + num2 + " = " + (num1 * num2));
+                System.out.println("The answer is: " + mul(num1, num2));
                 break;
 
             case '/':
-                System.out.println(num1 + " / " + num2 + " = " + (num1 / num2));
+                System.out.println("The answer is: " + div(num1, num2));
                 break;
 
         }
-
-            input.close();
+        scanObj.close();
 
     }
+
+    public static double chooseFirstNumber() {
+        Scanner scanObj = new Scanner(System.in);
+
+        System.out.println("Enter the first number: ");
+        return scanObj.nextDouble();
+
+    }
+    public static double chooseSecondNumber() {
+        Scanner scanObj = new Scanner(System.in);
+
+        System.out.println("Enter the second number: ");
+        return scanObj.nextDouble();
+
+    }
+
+
+    public static double add(double num1, double num2) {
+        double n;
+        n = num1 + num2;
+        return n;
+    }
+    public static double sub(double num1, double num2) {
+        double n;
+        n = num1 - num2;
+        return n;
+    }
+    public static double mul(double num1, double num2) {
+        double n;
+        n = num1 * num2;
+        return n;
+    }
+    public static double div(double num1, double num2) {
+        double n;
+        n = num1 / num2;
+        return n;
+    }
+
+
 }
+
