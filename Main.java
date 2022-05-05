@@ -45,8 +45,6 @@ public class Main {
 
         }
         scanObj.close();
-
-
     }
 
     public static double chooseFirstNumber() {
@@ -63,7 +61,6 @@ public class Main {
         return scanObj.nextDouble();
 
     }
-
 
     public static double add(double num1, double num2) {
         double n;
