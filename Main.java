@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         boolean isOperatorValid = false;
         char operation = 0;
-        double num1 = chooseFirstNumber();
-        double num2 = chooseSecondNumber();
         Scanner scanObj = new Scanner(System.in);
 
         System.out.println("Calculator");
@@ -23,6 +22,9 @@ public class Main {
                 isOperatorValid = true;
             }
         }
+
+        double num1 = chooseFirstNumber();
+        double num2 = chooseSecondNumber();
 
         switch (operation) {
             case '+':
@@ -43,6 +45,7 @@ public class Main {
 
         }
         scanObj.close();
+
 
     }
 
